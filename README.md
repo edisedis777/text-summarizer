@@ -117,17 +117,17 @@ python summarizer.py  # Uncomment run_tests() in main
 ```
 
 ### Contributing
-Fork the repository
-Create a feature branch (git checkout -b feature/amazing-feature)
-Commit your changes (git commit -am 'Add amazing feature')
-Push to the branch (git push origin feature/amazing-feature)
-Create a Pull Request
+- **Fork the repository
+- **Create a feature branch (git checkout -b feature/amazing-feature)
+- **Commit your changes (git commit -am 'Add amazing feature')
+- **Push to the branch (git push origin feature/amazing-feature)
+- **Create a Pull Request
 
 ###License
-This project is licensed under the MIT License - see the LICENSE file for details.
+- **This project is licensed under the MIT License - see the LICENSE file for details.
 
 ### Acknowledgments
-Built with Transformers by Hugging Face
-Enhanced display with Rich
-Sample text from Wikipedia
-Inspired by [Text Summarization with DistillBart Model](https://machinelearningmastery.com/text-summarization-with-distillbart-model/)
+- **Built with Transformers by Hugging Face
+- **Enhanced display with Rich
+- **Sample text from Wikipedia
+- **Inspired by [Text Summarization with DistillBart Model](https://machinelearningmastery.com/text-summarization-with-distillbart-model/)
