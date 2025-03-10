@@ -5,6 +5,10 @@
 
 A sophisticated text summarization tool powered by BART (Bidirectional and Auto-Regressive Transformer) from Facebook, enhanced with advanced features like batch processing, quantization, and rich console output.
 
+
+<img width="1112" alt="Screenshot 2025-03-10 at 22 13 18" src="https://github.com/user-attachments/assets/008c4d03-ba8f-4af6-8f20-0ea252eaa9b7" />
+
+
 ## Features
 
 - **Advanced Summarization**: Uses BART-large-CNN model for high-quality summaries
