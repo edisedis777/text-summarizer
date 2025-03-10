@@ -39,9 +39,9 @@ torch
 transformers
 rich
 
-### Usage
+## Usage
 
-Command Line
+### Command Line
 Summarize a single text:
 
 ```bash
