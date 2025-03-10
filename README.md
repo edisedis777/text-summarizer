@@ -6,7 +6,8 @@
 A sophisticated text summarization tool powered by BART (Bidirectional and Auto-Regressive Transformer) from Facebook, enhanced with advanced features like batch processing, quantization, and rich console output.
 
 
-<img width="1112" alt="Screenshot 2025-03-10 at 22 13 18" src="https://github.com/user-attachments/assets/008c4d03-ba8f-4af6-8f20-0ea252eaa9b7" />
+<img width="710" alt="Screenshot 2025-03-10 at 22 35 32" src="https://github.com/user-attachments/assets/021120dd-3c75-45cd-aeba-d8e64bb353a3" />
+
 
 
 ## Features
@@ -74,6 +75,15 @@ with AdvancedTextSummarizer(config) as summarizer:
     summary = summarizer.summarize("Your text here")
 ```
 
+### Sample Text from [Wikipedia](https://en.wikipedia.org/wiki/Reinforcement_learning)
+
+"Reinforcement learning (RL) is an interdisciplinary area of machine learning and optimal control concerned with how an intelligent agent should take actions in a dynamic environment in order to maximize a reward signal. Reinforcement learning is one of the three basic machine learning paradigms, alongside supervised learning and unsupervised learning.
+
+Q-learning at its simplest stores data in tables. This approach becomes infeasible as the number of states/actions increases (e.g., if the state space or action space were continuous), as the probability of the agent visiting a particular state and performing a particular action diminishes.
+
+Reinforcement learning differs from supervised learning in not needing labelled input-output pairs to be presented, and in not needing sub-optimal actions to be explicitly corrected. Instead, the focus is on finding a balance between exploration (of uncharted territory) and exploitation (of current knowledge) with the goal of maximizing the cumulative reward (the feedback of which might be incomplete or delayed).[1] The search for this balance is known as the exploration–exploitation dilemma.
+
+The environment is typically stated in the form of a Markov decision process (MDP), as many reinforcement learning algorithms use dynamic programming techniques.[2] The main difference between classical dynamic programming methods and reinforcement learning algorithms is that the latter do not assume knowledge of an exact mathematical model of the Markov decision process, and they target large MDPs where exact methods become infeasible.[3]"
 
 ### Example Output
 
@@ -119,4 +129,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ### Acknowledgments
 Built with Transformers by Hugging Face
 Enhanced display with Rich
+Sample text from Wikipedia
 Inspired by [Text Summarization with DistillBart Model](https://machinelearningmastery.com/text-summarization-with-distillbart-model/)
