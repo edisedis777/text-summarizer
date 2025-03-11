@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-A sophisticated text summarization tool powered by BART (Bidirectional and Auto-Regressive Transformer) from Facebook, enhanced with advanced features like batch processing, quantization, and rich console output.
+A sophisticated text summarization tool powered by BART (Bidirectional and Auto-Regressive Transformer) from Facebook, enhanced with advanced features like batch processing, quantization, and a rich console output.
 
 
 <img width="710" alt="Screenshot 2025-03-10 at 22 35 32" src="https://github.com/user-attachments/assets/021120dd-3c75-45cd-aeba-d8e64bb353a3" />
@@ -34,34 +34,33 @@ pip install -r requirements.txt
 ```
 
 ### Requirements
-Python 3.8+
-torch
-transformers
-rich
+- Python 3.8+
+- torch
+- transformers
+- rich
+- See 'requirements.txt' for full list
 
 ## Usage
 
 ## Command Line
 Summarize a single text:
-
 ```bash
 python summarizer.py --text "Your long text here that needs summarization"
 ```
 
 Summarize multiple texts:
-
 ```bash
 python summarizer.py --batch "Text 1" "Text 2" "Text 3"
 ```
 
 ## Python API
 
-- The `AdvancedTextSummarizer` class provides a programmatic interface for text summarization, allowing you to integrate it into your Python scripts or applications. Below are examples of how to use it.
+- The `AdvancedTextSummarizer` class provides a programmatic interface for text summarization, allowing us to integrate it into our Python scripts or applications.
+- Below are examples of how to use it.
 
 ### Basic Usage
 
 Summarize a single text with default settings:
-
 ```python
 from summarizer import AdvancedTextSummarizer
 
@@ -84,9 +83,9 @@ print("Summary:", summary_data["summary"])
 ```
 
 #### Custom Configuration
-Use SummarizerConfig to customize the summarizer:
 
-```
+Use SummarizerConfig to customize the summarizer:
+```python
 from summarizer import AdvancedTextSummarizer, SummarizerConfig
 
 # Custom configuration
@@ -106,9 +105,9 @@ with AdvancedTextSummarizer(config) as summarizer:
 ```
 
 #### Batch Processing
-Summarize multiple texts asynchronously:
 
-```
+Summarize multiple texts asynchronously:
+```python
 import asyncio
 from summarizer import AdvancedTextSummarizer
 
@@ -131,6 +130,7 @@ asyncio.run(main())
 
 
 #### Key Methods
+
 - summarize(text, max_length=150, min_length=50, ...)
 Summarizes a single text. Returns a dictionary with original_text, cleaned_text, and summary.
 - summarize_batch_async(texts, batch_size=2, ...)
@@ -141,6 +141,7 @@ Displays a formatted summary using the Rich library.
 Clears the internal cache to free memory.
 
 #### Notes
+
 - Ensure dependencies are installed first: pip install -r requirements.txt
 - Requires Python 3.8+ for asyncio support
 - Use the context manager (with statement) for proper resource cleanup
@@ -182,12 +183,14 @@ The environment is typically stated in the form of a Markov decision process (MD
 
 
 ### Development
+
 Running Tests
-```
+```python
 python summarizer.py  # Uncomment run_tests() in main
 ```
 
 ### Contributing
+
 - Fork the repository
 - Create a feature branch (git checkout -b feature/amazing-feature)
 - Commit your changes (git commit -am 'Add amazing feature')
@@ -195,10 +198,12 @@ python summarizer.py  # Uncomment run_tests() in main
 - Create a Pull Request
 
 ### License
+
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ### Acknowledgments
+
 - Built with Transformers by Hugging Face
 - Enhanced display with Rich
-- Sample text from Wikipedia
+- Sample text from [Wikipedia](https://en.wikipedia.org/wiki/Reinforcement_learning)
 - Inspired by [Text Summarization with DistillBart Model](https://machinelearningmastery.com/text-summarization-with-distillbart-model/)
