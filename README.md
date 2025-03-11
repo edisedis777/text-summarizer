@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-A sophisticated text summarization tool powered by BART (Bidirectional and Auto-Regressive Transformer) from Facebook, enhanced with advanced features like batch processing, quantization, and a rich console output.
+A text summarization tool powered by BART (Bidirectional and Auto-Regressive Transformer) from Facebook, enhanced with advanced features like batch processing, quantization, and a rich console output.
 
 
 <img width="710" alt="Screenshot 2025-03-10 at 22 35 32" src="https://github.com/user-attachments/assets/021120dd-3c75-45cd-aeba-d8e64bb353a3" />
