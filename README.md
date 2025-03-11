@@ -9,7 +9,6 @@ A sophisticated text summarization tool powered by BART (Bidirectional and Auto-
 <img width="710" alt="Screenshot 2025-03-10 at 22 35 32" src="https://github.com/user-attachments/assets/021120dd-3c75-45cd-aeba-d8e64bb353a3" />
 
 
-
 ## Features
 
 - **Advanced Summarization**: Uses BART-large-CNN model for high-quality summaries
@@ -42,7 +41,7 @@ rich
 
 ## Usage
 
-### Command Line
+## Command Line
 Summarize a single text:
 
 ```bash
@@ -55,25 +54,97 @@ Summarize multiple texts:
 python summarizer.py --batch "Text 1" "Text 2" "Text 3"
 ```
 
+## Python API
 
-### Python API
+- The `AdvancedTextSummarizer` class provides a programmatic interface for text summarization, allowing you to integrate it into your Python scripts or applications. Below are examples of how to use it.
+
+### Basic Usage
+
+Summarize a single text with default settings:
+
+```python
+from summarizer import AdvancedTextSummarizer
+
+# Initialize the summarizer
+summarizer = AdvancedTextSummarizer()
+
+# Text to summarize
+text = """
+The development of artificial intelligence (AI) has significantly impacted various industries worldwide.
+From healthcare to finance, AI-powered applications have streamlined operations, improved accuracy,
+and unlocked new possibilities.
+"""
+
+# Generate and print summary
+summary_data = summarizer.summarize(text)
+summarizer.print_summary(summary_data)
+
+# Access the summary directly
+print("Summary:", summary_data["summary"])
+```
+
+#### Custom Configuration
+Use SummarizerConfig to customize the summarizer:
+
 ```
 from summarizer import AdvancedTextSummarizer, SummarizerConfig
 
-# Basic usage
-summarizer = AdvancedTextSummarizer()
-summary = summarizer.summarize("Your text here")
-summarizer.print_summary(summary)
-
-# With custom configuration
+# Custom configuration
 config = SummarizerConfig(
-    max_length=200,
-    min_length=50,
-    quantize=True
+    model_name="facebook/bart-large-cnn",
+    quantize=True,           # Enable quantization for speed
+    max_length=100,          # Maximum summary length
+    min_length=30,           # Minimum summary length
+    repetition_penalty=2.0   # Stronger repetition penalty
 )
+
+# Use context manager for resource management
 with AdvancedTextSummarizer(config) as summarizer:
-    summary = summarizer.summarize("Your text here")
+    text = "Your long text here..."
+    summary_data = summarizer.summarize(text)
+    summarizer.print_summary(summary_data)
 ```
+
+#### Batch Processing
+Summarize multiple texts asynchronously:
+
+```
+import asyncio
+from summarizer import AdvancedTextSummarizer
+
+async def main():
+    summarizer = AdvancedTextSummarizer()
+    texts = [
+        "AI is revolutionizing healthcare with better diagnostics.",
+        "Self-driving cars use machine learning to navigate.",
+    ]
+    
+    # Summarize multiple texts
+    summaries = await summarizer.summarize_batch_async(texts)
+    for text, summary in zip(texts, summaries):
+        print(f"Original: {text}")
+        print(f"Summary: {summary}\n")
+
+# Run the async function
+asyncio.run(main())
+```
+
+
+#### Key Methods
+- summarize(text, max_length=150, min_length=50, ...)
+Summarizes a single text. Returns a dictionary with original_text, cleaned_text, and summary.
+- summarize_batch_async(texts, batch_size=2, ...)
+Asynchronously summarizes multiple texts. Returns a list of summaries.
+- print_summary(summary_data)
+Displays a formatted summary using the Rich library.
+- clear_cache()
+Clears the internal cache to free memory.
+
+#### Notes
+- Ensure dependencies are installed first: pip install -r requirements.txt
+- Requires Python 3.8+ for asyncio support
+- Use the context manager (with statement) for proper resource cleanup
+
 
 ### Sample Text from [Wikipedia](https://en.wikipedia.org/wiki/Reinforcement_learning)
 
@@ -93,7 +164,7 @@ The environment is typically stated in the form of a Markov decision process (MD
 │   Original Text    Your input text goes here...          │
 │   Summary          [bold green]A concise summary...[/]   │
 │                                                          │
-╰──────────── Generated with BART ─────────────╯
+╰──────────── Generated with BART ─────────────────────────╯
 ```
 
 ### Configuration Options
